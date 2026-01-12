@@ -178,6 +178,18 @@ Package validation passed.
 
 ✅ Está tudo certo para publicar.
 
+Caso falhe, tente:
+
+```bash
+flutter pub publish --dry-run
+```
+
+Para publicar efetivamente use:
+
+```bash
+flutter pub publish
+```
+
 ---
 
 ## 📤 5. Fazer login no pub.dev
