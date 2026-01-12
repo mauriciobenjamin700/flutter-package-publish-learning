@@ -1,5 +1,87 @@
 # 🚀 GUIA COMPLETO: Publicando um Pacote Flutter no pub.dev
 
+Criar um pacote Flutter é uma ótima forma de compartilhar funcionalidades reutilizáveis entre projetos ou com a comunidade.
+
+---
+
+## 🚀 Passo a passo para criar um pacote Flutter
+
+### 1. Criar o pacote
+- No terminal, execute:
+  ```bash
+  flutter create --template=package nome_do_pacote
+  ```
+- Isso gera uma estrutura básica de pacote com:
+  - `lib/` → onde fica o código principal.
+  - `pubspec.yaml` → metadados do pacote (nome, versão, dependências).
+  - `test/` → testes unitários.
+
+---
+
+### 2. Estrutura do código
+- Dentro de `lib/`, crie arquivos com suas classes e funções.
+- Exemplo simples (`lib/nome_do_pacote.dart`):
+  ```dart
+  library nome_do_pacote;
+
+  class Saudacao {
+    String ola(String nome) => 'Olá, $nome!';
+  }
+  ```
+
+---
+
+### 3. Configurar o `pubspec.yaml`
+- Ajuste informações como:
+  ```yaml
+  name: nome_do_pacote
+  description: Um pacote Flutter para saudações
+  version: 0.0.1
+  environment:
+    sdk: ">=2.17.0 <4.0.0"
+  dependencies:
+    flutter:
+      sdk: flutter
+  ```
+
+---
+
+### 4. Testar o pacote
+- Crie testes em `test/`:
+  ```dart
+  import 'package:flutter_test/flutter_test.dart';
+  import 'package:nome_do_pacote/nome_do_pacote.dart';
+
+  void main() {
+    test('Saudação funciona', () {
+      final saudacao = Saudacao();
+      expect(saudacao.ola('Mauricio'), 'Olá, Mauricio!');
+    });
+  }
+  ```
+
+---
+
+### 5. Publicar (opcional)
+- Para compartilhar com a comunidade, publique no [pub.dev](https://pub.dev):
+  - Crie uma conta com seu Google.
+  - Rode:
+    ```bash
+    flutter pub publish
+    ```
+  - Antes de publicar, rode:
+    ```bash
+    flutter pub publish --dry-run
+    ```
+    para validar.
+
+---
+
+## 🎯 Dicas extras
+- Use **exemplos** em `example/` para mostrar como usar seu pacote.
+- Escreva documentação clara nos comentários do código.
+- Mantenha testes automatizados para garantir qualidade.
+
 ---
 
 ## 🧩 1. Pré-requisitos
